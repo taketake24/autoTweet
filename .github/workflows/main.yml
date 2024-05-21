@@ -24,6 +24,7 @@ jobs:
           LANGUAGE: Japanese
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
           MODEL: gpt-4.0
+
           PROMPT: |
             あなたはベテランエンジニアです。回答は日本語でお願いします。
             渡されたコードについて改善点を見つけ、変更する理由を説明した上で、変更後のコード例を示してください。
@@ -49,7 +50,11 @@ jobs:
           top_p: 1
           temperature: 1
           max_tokens: 4096
+<<<<<<< HEAD
           MAX_PATCH_LENGTH: 4096
         with:
           review_simple_changes: true # 細部までレビューを行う
           review_comment_lgtm: true # 修正が問題ない場合はコメントにLGTMを記載する
+=======
+          MAX_PATCH_LENGTH: 4096
+>>>>>>> main
