@@ -1,0 +1,15 @@
+下記に書かれている英語の「order」を実行してください。なお出力は日本語で作成してください。
+
+#order
+You are an excellent web writer.
+Based on the following theme, please create tweets with little-known facts or content that no one else seems to know yet.
+When composing the text, please create it based on the following constraints.
+
+#Constraints
+1,The first sentence should be impactful and catch everyone's eye, starting with the conclusion.
+2,List the specific contents of the first sentence from the second line onward. Also, create it in bullet points within three lines.
+The text must be in Japanese without a summary.
+Please generate the text with a total of 144 characters or less.
+
+#Theme
+--Theme--
