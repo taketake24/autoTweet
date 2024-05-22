@@ -54,7 +54,4 @@ jobs:
           temperature: 1
           max_tokens: 4096
           MAX_PATCH_LENGTH: 4096
-        with:
-          review_simple_changes: true # 細部までレビューを行う
-          review_comment_lgtm: true # 修正が問題ない場合はコメントにLGTMを記載する
 
