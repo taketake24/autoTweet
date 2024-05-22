@@ -8,22 +8,26 @@ permissions:
 on:
   pull_request:
     types: [opened, reopened, synchronize]
+    branches:
+      - main
     paths:
       - "**.php"
       - "**.yml"
 
 jobs:
   gpt-review:
-    if: contains(github.event.*.labels.*.name, 'gptReview')
+    if: contains(github.event.pull_request.head.ref, 'develop')
     runs-on: ubuntu-latest
     steps:
-      - uses: anc95/ChatGPT-CodeReview@main
+      - uses: actions/checkout@v2
+      - name: Set up ChatGPT Code Review
+        uses: anc95/ChatGPT-CodeReview@main
         env:
           GITHUB_TOKEN: ${{ secrets.GB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           LANGUAGE: Japanese
           OPENAI_API_ENDPOINT: https://api.openai.com/v1
-          MODEL: gpt-4.0
+          MODEL: gpt-3.5-turbo
           PROMPT: |
             あなたはベテランエンジニアです。回答は日本語でお願いします。
             渡されたコードについて改善点を見つけ、変更する理由を説明した上で、変更後のコード例を示してください。
